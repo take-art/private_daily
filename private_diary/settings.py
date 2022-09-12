@@ -165,3 +165,8 @@ LOGGING = {
         },
     }
 }
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+# STATICFILES_DIRSにstaticディレクトリの絶対パスが格納
