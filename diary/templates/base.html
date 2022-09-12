@@ -20,7 +20,7 @@
 
     <!--  My style  -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
-    {% block hend %}{% endblock %}
+    {% block head %}{% endblock %}
 
 </head>
 <body>
@@ -30,8 +30,8 @@
             <div class="container px-5">
                 <a class="navbar-brand" href="{% url 'diary:index' %}">PRIVATE DIARY</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-taeget="#navbarResponsive" aris-controls="navbarResponsive"
-                        aria-expanded="false" aroa-label="Toggele navigation">
+                        data-bs-taeget="#navbarResponsive" aria-controls="navbarResponsive"
+                        aria-expanded="false" aria-label="Toggele navigation">
                     <span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav me-auto">
