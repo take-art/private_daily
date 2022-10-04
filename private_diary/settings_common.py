@@ -21,18 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x-&)l2-cgfg5@pet($*01mo@lvq74a-yq&y3o1nx(s=zs5%(ip'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'django_bootstrap5'
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +79,7 @@ DATABASES = {
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': '',
-        'POST': '',
+        'PORT': '',
     }
 }
 
@@ -137,45 +125,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ロギング設定
-LOGGING = {
-    'version': 1,   # １固定
-    'disable_existing_logger': False,
-
-    # ロガーの設定
-    'loggers': {
-        # Djangoが使用するロガー
-        'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        },
-        # diaryアプリケーションが使用するロガー
-        'diary': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
-    },
-    # ハンドラ設定
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'dev',
-        },
-    },
-    # フォーマッタ設定
-    'formatters': {
-        'dev': {
-            'format': '\t'.join([
-                '%(asctime)s',
-                '[%(levelname)s]',
-                '%(pathname)s(Line:%(lineno)d)',
-                '%(message)s'
-            ])
-        },
-    }
-}
-
 
 
 STATICFILES_DIRS = (
@@ -196,7 +145,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backens.AuthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
     #一般ユーザー用(メールアドレス認証)
     'django.contrib.auth.backends.ModelBackend',
     #　管理サイト用(ユーザー名認証)
