@@ -1,5 +1,4 @@
-from settings_common import *
-
+from .settings_common import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-x-&)l2-cgfg5@pet($*01mo@lvq74a-yq&y3o1nx(s=zs5%(ip'
