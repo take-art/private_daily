@@ -9,7 +9,7 @@
 <div class="container">
     <div class="my-div-style">
         <h1>サインアップ</h1>
-        <from method="post" action="{% url 'account_signup'%}">
+        <form method="post" action="{% url 'account_signup'%}">
             {% csrf_token %}
 
             <div class="mb-4 col-4">
@@ -21,7 +21,7 @@
             {% endif %}
 
             <button class="btn btn-primary" type="submit">登録</button>
-        </from>
+        </form>
     </div>
 </div>
 {% endblock %}
